@@ -14,5 +14,7 @@ you have to be on the directory of this project
 # Usage
 `python byp4ss3er.py http(s)://url /path`
 
-# PoC
 
+![bypass2](https://user-images.githubusercontent.com/73670999/100460823-e819b480-30d8-11eb-8da5-101a8d6e4d85.png)
+# PoC
+![bypass1](https://user-images.githubusercontent.com/73670999/100460818-e51ec400-30d8-11eb-83b4-b8683ddf82dd.png)
