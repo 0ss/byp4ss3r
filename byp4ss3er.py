@@ -1,13 +1,11 @@
 
-
 import requests
 import sys
 import colorama
 from colorama import Fore, Back, Style
 import time
+
 colorama.init()
-
-
 
 print("""
     __                   __ __           _____
@@ -44,7 +42,6 @@ def fixedHeaders(URL,PATH):
             'X-Client-IP': '127.0.0.1',
             'Client-IP': '127.0.0.1',
             'Proxy-Host': '127.0.0.1',
-            'Request-Uri':'127.0.0.1',
             'X-Forwarded': '127.0.0.1',
             'X-Forwarded-By': '127.0.0.1',
             'X-Forwarded-For':'127.0.0.1',
@@ -56,10 +53,7 @@ def fixedHeaders(URL,PATH):
             'Referer': URL+PATH,
             'Referrer': URL+PATH,
             'X-Host': '127.0.0.1',
-            'X-Http-Destinationurl': '127.0.0.1',
-            'X-Http-Host-Override': '127.0.0.1',
             'X-Original-Remote-Addr':'127.0.0.1',
-            'X-Original-Url': '127.0.0.1',
             'X-Proxy-Url': '127.0.0.1',
             'X-Forwarded-Proto': '127.0.0.1',
             'X-Real-Ip': '127.0.0.1',
@@ -91,6 +85,8 @@ def pathManipulating(PATH):
         PATH+'%09',
         PATH+'/',
         PATH+'..;/',
+        './'+PATH,
+        './'+PATH+'/',
         PATH+'//',
         PATH+';/',
         PATH+'/*',
@@ -158,6 +154,7 @@ def start():
             r  = requests.get(URL+"/", headers=getHeader,allow_redirects=False
             )
             code, color = checkResponse(r)
+            print(checkRequest.text == r.text)
             '''
             the reason we have to request 
             1- checkRequest
@@ -181,11 +178,4 @@ def start():
             pass
     
 
-
-
-        
-    
-  # print(fixedHeaders(URL, PATH)[0])
-   # proxies = {"http": "http://127.0.0.1:8080", "https": "http://127.0.0.1:8080" } 
-    #r = requests.get(URL+PATH,headers=fixedHeaders()[0], proxies=proxies, verify=False)
 start()
