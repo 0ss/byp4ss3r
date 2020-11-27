@@ -1,2 +1,2 @@
 # byp4ss3r
-dfsdfsdf
+A simple tool that uses some techniques and tricks to bypass 403/401 pages
