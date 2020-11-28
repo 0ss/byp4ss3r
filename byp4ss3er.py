@@ -154,7 +154,6 @@ def start():
             r  = requests.get(URL+"/", headers=getHeader,allow_redirects=False
             )
             code, color = checkResponse(r)
-            print(checkRequest.text == r.text)
             '''
             the reason we have to request 
             1- checkRequest
