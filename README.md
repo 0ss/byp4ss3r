@@ -28,7 +28,13 @@ Or install the packages independently
 
 
 # Usage
+windows
+
 `python byp4ss3er.py http(s)://url /path`
+
+Linux (python3 in order to display colors)
+
+`python3 byp4ss3er.py http(s)://url /path`
 
 
 ![bypass2](https://user-images.githubusercontent.com/73670999/100460823-e819b480-30d8-11eb-8da5-101a8d6e4d85.png)
