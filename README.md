@@ -8,8 +8,24 @@ Then you need to install the dependencies (requirements)
 you have to be on the directory of this project
 
 ` pip install -r requirements.txt`
+
+Or install the packages independently 
+
+` pip install requests `
+
+`pip install colorama` 
+
 #### Installation on Linux
 `sudo pip install -r requirements.txt`
+
+
+Or install the packages independently 
+
+` sudo pip install requests `
+
+
+`sudo pip install colorama` 
+
 
 # Usage
 `python byp4ss3er.py http(s)://url /path`
