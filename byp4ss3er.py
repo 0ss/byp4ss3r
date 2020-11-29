@@ -1,11 +1,10 @@
 
 import requests
-import sys
-import colorama
-from colorama import Fore, Back, Style
-import time
+from sys import exit, argv
+from colorama import Fore, Back, Style,init
 
-colorama.init()
+
+init()
 
 print("""
     __                   __ __           _____
@@ -18,7 +17,6 @@ print("""
        version: 1.0
        coded by (twitter: @akaSalah) 
 """)
-print("STARTING IN 2 SECONDS . . .")
 
 print(Fore.GREEN,"\rIF BYPASSED ACCORDING TO THE ANALYSIS => GREEN")
 print(Fore.YELLOW,"\rIF REDIRECT => YELLOW ")
@@ -27,13 +25,13 @@ print(Fore.LIGHTRED_EX,"\rIF DIDN'T BYPASS => RED\n ")
 
 def getArgs():
     try:
-        URL = sys.argv[1]
-        PATH = sys.argv[2]
+        URL = argv[1]
+        PATH = argv[2]
         return URL, PATH
     except:
         print("\n\nPlease use this format  => ./byp4ss3er http(s)://url /path \n")
         print("Example  => ./byp4ss3er http(s)://somewebsite.com /admin \n\n")
-    sys.exit() # kill the program
+    exit() # kill the program
         
 def fixedHeaders(URL,PATH):
     payloads = {
@@ -112,7 +110,7 @@ def checkResponse(r):
 
 def start():
 
-    time.sleep(2)
+    
     URL, PATH = getArgs()
    
     print(Fore.WHITE,"\r\n####### WITH HTTP Different Methods #######")
@@ -154,18 +152,6 @@ def start():
             r  = requests.get(URL+"/", headers=getHeader,allow_redirects=False
             )
             code, color = checkResponse(r)
-            '''
-            the reason we have to request 
-            1- checkRequest
-            and the main request
-            2- r
-            is because those dynamic header could return a response with 200 status code but that does not it by passed
-            so we have to make request to the root page and compare, then we can check if it really by passed or not 
-            proxies= {"http":"http://127.0.0.1:8080"
-            ,"https":"http://127.0.0.1:8080"
-            },verify=False
-
-            '''
             if color == Fore.GREEN:
                 if checkRequest.text != r.text:
                     print(color,header," | ", URL+PATH, "=>   ",code )
