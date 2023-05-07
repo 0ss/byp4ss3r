@@ -15,7 +15,7 @@ print("""
       /____/  /_/
 
        version: 1.0
-       coded by (twitter: @akaSalah) 
+       coded by (twitter: @Salahboij) 
 """)
 
 print(Fore.GREEN,"\rIF BYPASSED ACCORDING TO THE ANALYSIS => GREEN")
